@@ -1,0 +1,2 @@
+# ProyectoFrameworksPersistenciaEq2
+Segundo parcial metodologias agiles
