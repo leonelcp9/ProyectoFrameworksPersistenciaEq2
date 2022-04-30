@@ -22,7 +22,7 @@ public class ProductoDaoImpl implements ProductoDao, Serializable{
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	@Override
+
 	
 	public List<Producto> listarProducto() {
 		// TODO Auto-generated method stub
@@ -46,7 +46,6 @@ public class ProductoDaoImpl implements ProductoDao, Serializable{
 		return null;
 	}
 	
-	@Override
 	public Integer altaProducto(Producto producto) {
 		try {
 			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
@@ -57,7 +56,6 @@ public class ProductoDaoImpl implements ProductoDao, Serializable{
 		return null;
 	}
 	
-	@Override 
 	public Integer eliminarProducto(Integer idProducto) {
 		try {
 			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
@@ -68,7 +66,6 @@ public class ProductoDaoImpl implements ProductoDao, Serializable{
 		return null;
 	}
 	
-	@Override
 	public Integer actualizarProducto(Producto producto) {
 		try {
 			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
@@ -79,7 +76,6 @@ public class ProductoDaoImpl implements ProductoDao, Serializable{
 		return null;
 	}
 	
-	@Override
 	public Producto buscarPorId(Map<String, Integer> mapProducto) {
 		try {
 			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);

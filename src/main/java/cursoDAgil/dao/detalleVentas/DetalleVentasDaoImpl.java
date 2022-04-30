@@ -27,7 +27,7 @@ public class DetalleVentasDaoImpl implements DetalleVentasDao, Serializable{
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	@Override
+
 	public List<DetalleVentas> listarTodosDetalleVentas() {
 		List<DetalleVentas> list = null;
 		try {
@@ -42,7 +42,7 @@ public class DetalleVentasDaoImpl implements DetalleVentasDao, Serializable{
 				System.out.println("Producto(precio): "+ ven.getProducto().getPrecio());
 				System.out.println("Producto(precioVta): "+ ven.getProducto().getPrecioVta());
 				System.out.println("Producto(cantidad): "+ ven.getProducto().getCantidad());
-				System.out.println("Producto(marcaId): "+ ven.getProducto().getMarcaId());
+				System.out.println("Producto(marcaId): "+ ven.getProducto().getIdMarca());
 				System.out.println();
 			}
 			return list;

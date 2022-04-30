@@ -52,7 +52,6 @@ public class VentaDaoImpl implements VentaDao, Serializable{
 		return null;
 	}
 	
-	@Override
 	public List<Venta> consultarVentaCliente(Integer clienteId) {
 		List<Venta> list = null;
 		try {

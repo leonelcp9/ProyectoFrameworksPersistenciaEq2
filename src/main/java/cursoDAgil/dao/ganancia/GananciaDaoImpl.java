@@ -22,7 +22,6 @@ public class GananciaDaoImpl implements GananciaDao, Serializable{
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	@Override
 	
 	public List<Ganancia> listarGanancia() {
 		// TODO Auto-generated method stub

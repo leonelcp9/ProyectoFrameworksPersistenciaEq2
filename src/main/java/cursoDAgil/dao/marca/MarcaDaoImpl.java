@@ -20,7 +20,6 @@ public class MarcaDaoImpl implements MarcaDao, Serializable {
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	@Override
 	public List<Marca> listarMarcas() {
 		// TODO Auto-generated method stub
 		List<Marca> list = null;
@@ -40,7 +39,6 @@ public class MarcaDaoImpl implements MarcaDao, Serializable {
 		return null;
 	}
 	
-	@Override
 	public Integer nuevaMarca(Marca nombreMarca) {
 		try{
 		MarcaMapper marcaMapper = sqlSession.getMapper(MarcaMapper.class);
@@ -51,7 +49,6 @@ public class MarcaDaoImpl implements MarcaDao, Serializable {
 		return null;
 	}
 	
-	@Override
 	public Integer eliminarMarca(Integer idMarca) {
 		try{
 			MarcaMapper marcaMapper = sqlSession.getMapper(MarcaMapper.class);
@@ -74,12 +71,7 @@ public class MarcaDaoImpl implements MarcaDao, Serializable {
 		
 		return null;
 	}
-//	@Override
-//	public List<Cliente> listarTodosClientes(){
-//	
-//	}
 
-	@Override
 	public Marca obtenerMarcaporId(Map<String, Integer> mapMarca) {
 		try{
 			MarcaMapper marcaMapper = sqlSession.getMapper(MarcaMapper.class);
