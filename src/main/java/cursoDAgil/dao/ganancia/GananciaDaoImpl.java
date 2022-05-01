@@ -30,7 +30,7 @@ public class GananciaDaoImpl implements GananciaDao, Serializable{
 			GananciaMapper gananciaMapper = sqlSession.getMapper(GananciaMapper.class);
 			list = gananciaMapper.listarGanancia();
 			for(Ganancia c:list) {
-				System.out.println("ID ganancia: "+ c.getIdGanancia());
+				System.out.println("ID gananciaaaaa: "+ c.getIdGanancia());
 				System.out.println("ID venta: "+c.getVentaId());
 				System.out.println("Total ganancia: "+c.getTotalGanancia());
 				System.out.println("Fecha: "+c.getFecha());
