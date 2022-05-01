@@ -3,7 +3,7 @@ package cursoDAgil.bd.domain;
 public class Ganancia {
 	private Integer idGanancia;
 	private Integer ventaId;
-	private Integer totalGanancia;
+	private Float totalGanancia;
 	private String fecha;
 	public Integer getIdGanancia() {
 		return idGanancia;
@@ -17,10 +17,10 @@ public class Ganancia {
 	public void setVentaId(Integer ventaId) {
 		this.ventaId = ventaId;
 	}
-	public Integer getTotalGanancia() {
+	public Float getTotalGanancia() {
 		return totalGanancia;
 	}
-	public void setTotalGanancia(Integer totalGanancia) {
+	public void setTotalGanancia(Float totalGanancia) {
 		this.totalGanancia = totalGanancia;
 	}
 	public String getFecha() {

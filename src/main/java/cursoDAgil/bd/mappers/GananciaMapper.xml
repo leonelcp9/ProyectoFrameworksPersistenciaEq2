@@ -5,7 +5,7 @@
 	<resultMap id="BaseResultMap" type="cursoDAgil.bd.domain.Ganancia">
 		<id column="idGanancia" property="idGanancia" jdbcType="INTEGER"/>
 		<result column="ventaId" property="ventaId" jdbcType="INTEGER" />
-		<result column="totalGanancia" property="totalGanancia" jdbcType="INTEGER" />
+		<result column="totalGanancia" property="totalGanancia" jdbcType="FLOAT" />
 		<result column="fecha" property="fecha" jdbcType="VARCHAR" />
 	</resultMap>
 	
@@ -15,5 +15,9 @@
 	<select id="listarPorFecha" resultMap="BaseResultMap" parameterType="hashMap">
 		SELECT * FROM ganancias WHERE fecha = #{fecha}
 	</select>
-
+	<insert id="crearGananciaDeVenta" useGeneratedKeys="true" keyProperty="idGanancia" parameterType="cursoDAgil.bd.domain.Ganancia">
+		INSERT INTO ganancias (ventaId,totalGanancia,fecha)
+		values 
+		(#{ventaId},#{totalGanancia},#{fecha})
+	</insert>
 </mapper>
