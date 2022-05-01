@@ -40,17 +40,14 @@ public class GananciaDaoImplTest {
 	public void pruebaListarPorFecha() {
 		System.out.println("------------------------------------------------------");
 		System.out.println("Test consultar por fecha");
-		Ganancia ganancia = new Ganancia();
 		Map<String, String> mapGanancia = new HashMap<>();
 		mapGanancia.put("fecha","2022-04-28");
 		try{
-			ganancia=gananciaDao.listarPorFecha(mapGanancia);
-			assertNotNull(ganancia);
-			System.out.println("Fecha" + ganancia.getFecha());
-			System.out.println("Total ganancia" + ganancia.getTotalGanancia());
-			System.out.println("Id ganancia" + ganancia.getIdGanancia());
-			System.out.println("Id venta" + ganancia.getVentaId());
-			System.out.println();
+			List<Ganancia> lista = gananciaDao.listarGanancia();
+			lista=gananciaDao.listarPorFecha(mapGanancia);
+			int a = lista.size();
+			assertEquals(lista.size(),a);
+			
 		}catch(Exception e){
 			System.out.println("Error: " + e);
 		}

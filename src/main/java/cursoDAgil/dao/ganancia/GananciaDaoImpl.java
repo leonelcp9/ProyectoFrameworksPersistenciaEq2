@@ -43,15 +43,19 @@ public class GananciaDaoImpl implements GananciaDao, Serializable{
 		return null;
 	}
 	
-	public Ganancia listarPorFecha(Map <String, String> mapGanancia) {
+	public List<Ganancia> listarPorFecha(Map <String, String> mapGanancia) {
+		List<Ganancia> list = null;
 		try {
 			GananciaMapper gananciaMapper = sqlSession.getMapper(GananciaMapper.class);
-			Ganancia ganancia = new Ganancia();
-			ganancia = gananciaMapper.listarPorFecha(mapGanancia);
-			System.out.println("ID Ganancia: " + ganancia.getIdGanancia());
-			System.out.println("Venta id: " + ganancia.getVentaId());
-			System.out.println("Total ganancias: " + ganancia.getTotalGanancia());
-			System.out.println("Fecha: " + ganancia.getFecha());
+			list = gananciaMapper.listarPorFecha(mapGanancia);
+			
+			for(Ganancia g:list) {
+				System.out.println("ID Ganancia: " + g.getIdGanancia());
+				System.out.println("Venta id: " + g.getVentaId());
+				System.out.println("Total ganancias: " + g.getTotalGanancia());
+				System.out.println("Fecha: " + g.getFecha());
+			}
+			
 			
 		}catch(Exception e) {
 			System.out.println("Error: "+e);

@@ -7,5 +7,5 @@ import cursoDAgil.bd.domain.Ganancia;
 
 public interface GananciaDao {
 	List<Ganancia> listarGanancia();
-	Ganancia listarPorFecha(Map <String, String> mapGanancia);
+	List<Ganancia> listarPorFecha(Map <String, String> mapGanancia);
 }
