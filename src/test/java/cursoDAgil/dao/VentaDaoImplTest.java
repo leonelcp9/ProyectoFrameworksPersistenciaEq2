@@ -47,6 +47,9 @@ public class VentaDaoImplTest {
 			System.out.println("error" + ex);
 		}
 	}
+	/*
+	 * Función que prueba a insertar una venta nueva en la base de datos
+	 */
 	@Test
 	public void pruebaInsertarVenta() {
 		System.out.println("Test insertar venta");

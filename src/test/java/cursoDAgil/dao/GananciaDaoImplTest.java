@@ -57,7 +57,9 @@ public class GananciaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	
+	/*
+	 * Función que prueba crear una ganancia a partir de la venta que le damos
+	 */
 	@Test 
 	public void pruebaCrearGananciaDeVenta() {
 		System.out.println("------------------------------------------------------");
