@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+<!--  //////////////////////////////////
+/* Equipo 2							*/
+/* Autor: Mendez Gonzalez William	*/
+/* Fecha: 26/04/2022				*/
+/////////////////////////////////// --><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cursoDAgil.bd.mappers.DireccionMapper">
 	<resultMap id="BaseResultMap" type="cursoDAgil.bd.domain.Direccion">
@@ -20,7 +25,7 @@
 	
 	<select id="obtenerDirecciones" resultMap="BaseResultMap">
 	SELECT * FROM
-	DIRECCION
+	direccion
 	</select>
 	<insert id="nuevaDireccionCliente"
 			parameterType="cursoDAgil.bd.domain.Direccion"
@@ -34,19 +39,17 @@
 	
 	<select id="obtenerDireccionPorId" resultMap="BaseResultMap"
 	parameterType="hashMap">
-		SELECT
-		dir.idDireccion,
-		dir.calle,
-		
-		dir.numero,
-		dir.colonia,
-		dir.ciudad,
-		dir.estado,
-		dir.pais,
-		dir.codigoPostal
-		FROM
-		equipo2.DIRECCION dir
+		SELECT dir.idDireccion,
+		dir.calle,dir.numero,dir.colonia,dir.ciudad,
+		dir.estado, dir.pais,dir.codigoPostal FROM
+		direccion dir
 		WHERE
 		idDireccion = #{idDireccion}
 	</select>
+	<delete id="eliminarDireccionPorId" parameterType="cursoDAgil.bd.domain.Direccion">
+		DELETE FROM direccion WHERE  idDireccion =#{iddireccion}
+	</delete>
+	<update id="actualizarDireccionPorID" parameterType="cursoDAgil.bd.domain.Direccion">
+		UPDATE direccion SET calle=#{calle}, numero=#{numero}, colonia=#{colonia}, ciudad=#{ciudad},pais=#{pais}, codigoPostal=#{codigoPostal} WHERE idDireccion =#{iddireccion}
+	</update>
 </mapper>

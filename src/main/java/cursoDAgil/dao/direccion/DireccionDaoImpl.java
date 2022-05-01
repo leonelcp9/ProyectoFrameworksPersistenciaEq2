@@ -1,3 +1,8 @@
+//////////////////////////////////
+/* Equipo 2							*/
+/* Autor: Mendez Gonzalez William	*/
+/* Fecha: 27/04/2022				*/
+/////////////////////////////////// 
 package cursoDAgil.dao.direccion;
 
 import java.util.List;
@@ -18,12 +23,10 @@ public class DireccionDaoImpl implements DireccionDao{
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-
+	@Override
 	public Integer nuevaDireccionCliente(Direccion direccion) {
 		try{
-			DireccionMapper direccionMapper =
-					sqlSession.getMapper(DireccionMapper.class);
-	
+			DireccionMapper direccionMapper =sqlSession.getMapper(DireccionMapper.class);
 			System.out.println("direccion creada con �xito");
 			return direccionMapper.nuevaDireccionCliente(direccion);
 		}catch (Exception e) {
@@ -31,7 +34,7 @@ public class DireccionDaoImpl implements DireccionDao{
 		}
 		return null;
 	}
-
+	@Override
 	public Direccion obtenerDireccionPorId(Map<String, Integer> mapDireccion)
 	{
 		try{
@@ -44,7 +47,7 @@ public class DireccionDaoImpl implements DireccionDao{
 		}
 		return null;
 	}
-
+	@Override
 	public List<Direccion> obtenerDirecciones() {
 		try{
 			DireccionMapper direccionMapper =
@@ -56,4 +59,28 @@ public class DireccionDaoImpl implements DireccionDao{
 		}
 		return null;
 	}
+	@Override
+	public Integer eliminarDireccionPorId(Integer iddireccion) {
+		try {
+			DireccionMapper direccionmapper=sqlSession.getMapper(DireccionMapper.class);
+			System.out.println("Direccion Eliminado");
+			return direccionmapper.eliminarDireccionPorId(iddireccion);
+		}catch(Exception e) {
+			System.out.println("Error"+ e);
+		}
+		return null;
+	}
+	@Override
+	public Integer actualizarDireccionPorID(Direccion direccion) {
+		try{
+			DireccionMapper direccionmapper=sqlSession.getMapper(DireccionMapper.class);
+			System.out.println("Direccion Actualizado con Exito");
+			return direccionmapper.actualizarDireccionPorID(direccion);
+		}catch(Exception e) {
+			System.out.println("Error "+e);
+		}
+		return null;
+	}
+	
+	
 }

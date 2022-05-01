@@ -1,3 +1,8 @@
+//////////////////////////////////
+/* Equipo 2							*/
+/* Autor: Mendez Gonzalez William	*/
+/* Fecha: 28/04/2022				*/
+/////////////////////////////////// 
 package cursoDAgil.dao;
 
 import static org.junit.Assert.assertEquals;
@@ -68,4 +73,36 @@ public class DireccionDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
+	@Ignore
+	public void eliminardireccion() {
+		System.out.println("Test eliminar Direccion");
+		try {
+			direccionDao.eliminarDireccionPorId(2);
+		}catch(Exception e){
+			System.out.println("Error"+ e );
+		}
+	}
+	@Ignore
+	public void actualizarDireccion() {
+		System.out.println("Test Actualizar Direccion");
+		Map<String, Integer> mapDireccion = new HashMap<>();
+		Direccion direccion= new Direccion();
+		mapDireccion.put("idDireccion",2);
+		try {
+			direccion.setIdDireccion(2);
+			direccion.setCalle("Micaela GUERRERO");
+			direccion.setNumero(3);
+			direccion.setColonia("Alta Vista");
+			direccion.setCiudad("Huajuapan");
+			direccion.setEstado("Oaxaca");
+			direccion.setPais("Mexico");
+			direccion.setCodigoPostal(69005);
+			
+			direccionDao.actualizarDireccionPorID(direccion);
+			System.out.println("DireccionActualizada");
+		}catch(Exception e) {
+			System.out.println("Error"+e);
+		}
+	}
+	
 }

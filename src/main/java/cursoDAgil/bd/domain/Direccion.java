@@ -1,3 +1,8 @@
+//////////////////////////////////
+/* Equipo 2							*/
+/* Autor: Mendez Gonzalez William	*/
+/* Fecha: 25/04/2022				*/
+/////////////////////////////////// 
 package cursoDAgil.bd.domain;
 
 public class Direccion {
