@@ -44,9 +44,10 @@ public class GananciaDaoImpl implements GananciaDao, Serializable{
 	}
 	
 	public List<Ganancia> listarPorFecha(Map <String, String> mapGanancia) {
+		GananciaMapper gananciaMapper = sqlSession.getMapper(GananciaMapper.class);
 		List<Ganancia> list = null;
 		try {
-			GananciaMapper gananciaMapper = sqlSession.getMapper(GananciaMapper.class);
+			
 			list = gananciaMapper.listarPorFecha(mapGanancia);
 			
 			for(Ganancia g:list) {
@@ -58,7 +59,7 @@ public class GananciaDaoImpl implements GananciaDao, Serializable{
 			
 			
 		}catch(Exception e) {
-			System.out.println("Error: "+e);
+			System.out.println("Error here: "+e);
 		}
 		return null;
 	}
